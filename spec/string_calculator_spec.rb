@@ -13,5 +13,9 @@ describe StringCalculator do
     expect("1,2".extend(StringCalculator).manipulate).to eq(3)
    end
 
+   it "return value 3 for 1,2,2,1,3" do
+    expect("1,2,2,1,3".extend(StringCalculator).manipulate).to eq(9)
+   end
+
   end
 end
