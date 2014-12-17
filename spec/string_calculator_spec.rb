@@ -29,5 +29,9 @@ describe StringCalculator do
     expect("//;\n1;4;2".extend(StringCalculator).manipulate).to eq(7)
    end
 
+   it "raise error for negative number" do
+    expect{"-1".extend(StringCalculator).manipulate}.to raise_error
+   end
+
   end
 end
