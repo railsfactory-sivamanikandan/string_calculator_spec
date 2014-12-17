@@ -4,5 +4,10 @@ describe StringCalculator do
    it "return 0 for empty string" do
     expect("".extend(StringCalculator).manipulate).to eq(0)
    end
+
+   it "return value 1 for 1" do
+    expect("1".extend(StringCalculator).manipulate).to eq(1)
+   end
+   
   end
 end
