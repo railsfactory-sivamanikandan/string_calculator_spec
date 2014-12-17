@@ -33,5 +33,8 @@ describe StringCalculator do
     expect{"-1".extend(StringCalculator).manipulate}.to raise_error
    end
 
+   it "raise error for negative numbers with message for -1,2,-9" do
+    expect{"-1,2,-9".extend(StringCalculator).manipulate}.to raise_error('Negativies not allowed:-1,-9')
+   end
   end
 end
