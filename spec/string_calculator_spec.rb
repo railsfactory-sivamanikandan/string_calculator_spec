@@ -41,5 +41,9 @@ describe StringCalculator do
     expect("1,1001".extend(StringCalculator).manipulate).to eq(1)
    end
 
+   it "Number bigger then 1000 should ignored for 1,1001, 2000, 3, 1002, 1" do
+    expect("1,1001, 2000, 3, 1002, 1".extend(StringCalculator).manipulate).to eq(5)
+   end
+
   end
 end
