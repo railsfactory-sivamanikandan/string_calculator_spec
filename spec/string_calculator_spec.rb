@@ -21,5 +21,9 @@ describe StringCalculator do
     expect("3\n3\n3\n1".extend(StringCalculator).manipulate).to eq(10)
    end
 
+   it "return 7 for 1\n4,2" do
+    expect("1\n4,2".extend(StringCalculator).manipulate).to eq(7)
+   end
+
   end
 end
