@@ -36,5 +36,10 @@ describe StringCalculator do
    it "raise error for negative numbers with message for -1,2,-9" do
     expect{"-1,2,-9".extend(StringCalculator).manipulate}.to raise_error('Negativies not allowed:-1,-9')
    end
+
+   it "Number bigger then 1000 should ignored for 1,1001" do
+    expect("1,1001".extend(StringCalculator).manipulate).to eq(1)
+   end
+
   end
 end

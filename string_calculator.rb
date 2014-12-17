@@ -3,7 +3,7 @@ module StringCalculator
  def manipulate
   return 0 if empty?
   raise_if_negatives_present if include?("-")
-  return digits.inject { |sum, x| sum +x }
+  return array_sum
  end
  # To set delimiter values
  def delimiter
@@ -17,6 +17,12 @@ module StringCalculator
  def raise_if_negatives_present
    negativies = digits.select{|x| x < 0}
    raise "Negativies not allowed:#{negativies.join(',')}" if negativies.any?
+ end
+ # To sum the array of numbers
+ def array_sum
+   sum = 0
+   digits.each { |x| sum+=x if x < 1001 }
+   sum
  end
 
 end
