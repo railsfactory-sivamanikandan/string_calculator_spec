@@ -44,6 +44,10 @@ describe StringCalculator do
    it "Number bigger then 1000 should ignored for 1,1001, 2000, 3, 1002, 1" do
     expect("1,1001, 2000, 3, 1002, 1".extend(StringCalculator).manipulate).to eq(5)
    end
+   
+   it "Allow multiple uniform delimiters like //***\n3***7***1" do
+    expect("//***\n3***7***1".extend(StringCalculator).manipulate).to eq(11)
+   end
 
   end
 end

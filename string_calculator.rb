@@ -7,11 +7,11 @@ module StringCalculator
  end
  # To set delimiter values
  def delimiter
-   self[0..1] == "//" ? self[2] : ','
+   ','
  end
  # To split the string in to number array
  def digits
-   gsub(/\n/,delimiter).split(delimiter).map(&:to_i)
+   gsub(regular_expression,delimiter).split(delimiter).map(&:to_i)
  end
  # To raise error if any negative number presents
  def raise_if_negatives_present
@@ -24,5 +24,9 @@ module StringCalculator
    digits.each { |x| sum+=x if x < 1001 }
    sum
  end
-
+ 
+  # Regular ecpression to remove special characters
+ def regular_expression
+  /[\n`~!@#$%^&*()_|+\=?;:'",.<>\{\}\[\]\\\/]/
+ end
 end
