@@ -57,5 +57,9 @@ describe StringCalculator do
     expect("///****\n24;1***;5".extend(StringCalculator).manipulate).to eq(30)
    end
 
+   it "Allow mutiple nonuniform delimiters with negative values like ///****\n-24;1***;5" do
+    expect{"///****\n-24;1***;5".extend(StringCalculator).manipulate}.to raise_error('Negativies not allowed:-24')
+   end
+
   end
 end
