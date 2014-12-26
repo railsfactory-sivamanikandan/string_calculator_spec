@@ -11,7 +11,7 @@ module StringCalculator
  end
  # To split the string in to number array
  def digits
-   gsub(regular_expression,delimiter).split(delimiter).map(&:to_i)
+   gsub(regular_expression,delimiter).split(delimiter).reject(&:empty?).map(&:to_i)
  end
  # To raise error if any negative number presents
  def raise_if_negatives_present

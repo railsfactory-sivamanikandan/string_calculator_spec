@@ -49,5 +49,9 @@ describe StringCalculator do
     expect("//***\n3***7***1".extend(StringCalculator).manipulate).to eq(11)
    end
 
+   it "Allow multiple uniform delimiters with negative values like //***\n3***-7***1***-10" do
+    expect{"//***\n3***-7***1***-10".extend(StringCalculator).manipulate}.to raise_error('Negativies not allowed:-7,-10')
+   end
+
   end
 end
